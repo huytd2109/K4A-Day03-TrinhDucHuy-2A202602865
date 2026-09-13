@@ -28,7 +28,7 @@ TOOLS_SCHEMA = [
     },
     
     # --------------------------------------------------------------------------
-    # TODO 1.2: HỌC VIÊN HOÀN THIỆN TOOL SCHEMA CHO 'schedule_appointment'
+    # Tool 2: Schema đặt lịch tư vấn học vụ với cố vấn.
     # 🎯 YÊU CẦU THIẾT KẾ SCHEMA (JSON SCHEMA STANDARD):
     # 1. Tool dùng để đặt lịch hẹn tư vấn học vụ với Cố vấn học tập VinUni.
     # 2. Thiết kế các tham số (properties) để LLM trích xuất:
@@ -43,9 +43,20 @@ TOOLS_SCHEMA = [
         "parameters": {
             "type": "object",
             "properties": {
-                # TODO 1.2: Khai báo các thuộc tính tham số cho Tool tại đây...
+                "student_id": {
+                    "type": "string",
+                    "description": "Mã sinh viên cần đặt lịch tư vấn (ví dụ: 'SV2026001')."
+                },
+                "datetime_str": {
+                    "type": "string",
+                    "description": "Thời gian hẹn theo định dạng HH:MM DD/MM/YYYY (ví dụ: '14:00 15/09/2026')."
+                },
+                "advisor_name": {
+                    "type": "string",
+                    "description": "Tên cố vấn học tập do người dùng cung cấp hoặc lấy từ kết quả academic_query."
+                }
             },
-            "required": [] # TODO 1.2: Khai báo danh sách các trường bắt buộc tại đây...
+            "required": ["student_id", "datetime_str", "advisor_name"]
         }
     }
 ]
