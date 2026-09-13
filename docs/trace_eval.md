@@ -54,6 +54,28 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
     "output": "Đặt lịch thành công cho sinh viên SV2026001 với PGS.TS Nguyễn Văn A vào lúc 14:00 15/09/2026.",
     "latency_ms": 10.0
   }
+    {
+    "step": 1,
+    "query": "Hãy tra cứu thông tin học vụ và điểm GPA của sinh viên có mã SV9999999. Nếu không tìm thấy hồ sơ, hãy thông báo rõ cho tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "academic_query",
+    "arguments": {
+      "student_id": "SV9999999"
+    },
+    "observation": {
+      "status": "NOT_FOUND",
+      "message": "Không tìm thấy dữ liệu sinh viên có mã 'SV9999999'"
+    },
+    "latency_ms": 1988.41
+  },
+  {
+    "step": 2,
+    "query": "Hãy tra cứu thông tin học vụ và điểm GPA của sinh viên có mã SV9999999. Nếu không tìm thấy hồ sơ, hãy thông báo rõ cho tôi.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Đang suy luận...",
+    "output": "Không tìm thấy dữ liệu sinh viên có mã 'SV9999999'",
+    "latency_ms": 2252.01
+  }
 ```
 
 ---
